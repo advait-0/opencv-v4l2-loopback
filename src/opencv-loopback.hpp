@@ -23,7 +23,7 @@ struct V4L2Buffer
 
 // Error checking macro
 #define V4L2_IOCTL_CHECK(fd, req, arg) \
-    if (ioctl(fd, req, arg) < 0)
+    if (ioctl(fd, req, arg) < 0) \
     { \
         std::cerr << "ioctl failed (" << __FILE__ << ":" << __LINE__ << "): " << strerror(errno) << std::endl; \
         cleanup(); \
